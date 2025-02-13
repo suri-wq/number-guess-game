@@ -43,23 +43,23 @@ function play(){
    }else if(userValue>computerNum){
         mainImg.src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeno0amkwenV1MXJ1bjhjOTd0cms3cTluZXV2ZGR4b2tycXpjanQyOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LkuPxRS0F6gmc/giphy.gif"
         resultArea.textContent="DOWN!"
-   } else {
+   } else if(userValue==computerNum){
         mainImg.src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzdscHNmNXBwd2hnZGkzODliNXdyaWUwNzI1d3Nxa2xxdXliaG1vciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ov09jGgEThFKpxZ9eC/giphy.gif"
         gameOver=true;
         resultArea.textContent="tada!"
         chanceArea.textContent=""
-   }
+   } 
 
    
-   if (chances == 0){
+   if (chances == 0 && userValue != computerNum){
     gameOver = true
-    
+    resultArea.textContent=`게임오버! 정답은~ ${computerNum} `
+    mainImg.src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXVlMHVxaGVoM2x6d3I2Mmx5bGR6MDV1ZnJpdnZocTNwdWd2eW9pdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JUSwkiO1Eh5K43ruN0/giphy.gif"
    }
 
    if (gameOver == true){
     playButton.disabled = true
-    resultArea.textContent=`게임오버! 정답은~ ${computerNum} `
-    mainImg.src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXVlMHVxaGVoM2x6d3I2Mmx5bGR6MDV1ZnJpdnZocTNwdWd2eW9pdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JUSwkiO1Eh5K43ruN0/giphy.gif"
+ 
    }
 }
 
