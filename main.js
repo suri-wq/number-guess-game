@@ -9,7 +9,6 @@ let gameOver = false
 let chanceArea = document.getElementById("chance-area")
 let history=[]
 
-chanceArea.textContent= `남은기회:${chances}`;
 
 playButton.addEventListener("click", play)
 resetButton.addEventListener("click", reset)
@@ -18,6 +17,8 @@ userInput.addEventListener("focus",function(){userInput.value=""})
 function pickRandomNum(){
     computerNum = Math.floor(Math.random() * 100)+1;
     console.log("정답",computerNum);
+    chanceArea.textContent= `남은기회:${chances},(정답은:${computerNum})`;
+
 }
 
 function play(){
