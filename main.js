@@ -4,7 +4,7 @@ let userInput = document.getElementById("user-input")
 let mainImg = document.querySelector(".main-img")
 let resultArea = document.getElementById("result-area")
 let resetButton = document.getElementById("reset-button")
-let chances = 5
+let chances = 3;
 let gameOver = false
 let chanceArea = document.getElementById("chance-area")
 let history=[]
@@ -34,7 +34,7 @@ function play(){
     }
     
     chances --;
-    chanceArea.textContent= `남은기회:${chances}`;
+    chanceArea.textContent= `남은기회:${chances},(정답은:${computerNum})`;
     history.push(userValue)
 
    if (userValue < computerNum){
@@ -72,7 +72,7 @@ function reset(){
     resultArea.textContent=""
     mainImg.src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXN4ZzgzajJldHh4Nnp6dHo3aTJzMGNwNHVpdHpiYnh2bXA2a3Z4diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X5Yf2ucVFl7eU5Ir50/giphy.gif"
     chances = 5;
-    chanceArea.textContent = `남은기회:${chances}`;
+    chanceArea.textContent= `남은기회:${chances},(정답은:${computerNum})`;
     playButton.disabled = false;
     history = [];
 }
